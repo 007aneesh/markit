@@ -152,5 +152,6 @@ mongoose
     console.log("DB connected and server us running.");
   })
   .catch((err) => {
-    console.log(err);
+    console.log("NOT CONNECTED");
+    throw new Error("NOT CONNECTED");
   });

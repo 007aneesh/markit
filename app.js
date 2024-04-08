@@ -14,6 +14,9 @@ app.use(
   })
 );
 
+app.get("/", async  (req, res) => {
+  res.send("Hello");
+})
 
 async function LoadModels() {
   // Load the models

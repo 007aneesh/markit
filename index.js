@@ -142,11 +142,14 @@ app.post("/check-face", async (req, res) => {
 
 // add your mongo key instead of the ***
 mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  })
+  .connect(
+    `mongodb+srv://aneesh:aneesh@cluster0.4ddziji.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0`,
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+    }
+  )
   .then(() => {
     app.listen(process.env.PORT || 5000);
     console.log("DB connected and server us running.");

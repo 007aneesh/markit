@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const { Canvas, Image } = require("canvas");
 const canvas = require("canvas");
 const fileUpload = require("express-fileupload");
+const cors = require("cors");
 faceapi.env.monkeyPatch({ Canvas, Image });
 
 const app = express();
@@ -13,6 +14,10 @@ app.use(
     useTempFiles: true,
   })
 );
+
+app.use(cors({
+  origin: "*"
+}));
 
 app.get("/", async  (req, res) => {
   res.send("Hello");

@@ -123,7 +123,6 @@ app.post("/post-face",async (req,res)=>{
     const label = req.body.label
     let result = await uploadLabeledImages([File1], label);
     if(result){
-        
         res.json({message:"Face data stored successfully"})
     }else{
         res.json({message:"Something went wrong, please try again."})
